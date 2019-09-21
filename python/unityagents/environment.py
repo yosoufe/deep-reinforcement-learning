@@ -23,6 +23,7 @@ from PIL import Image
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("unityagents")
+logger.setLevel(logging.DEBUG)
 
 
 class UnityEnvironment(object):
@@ -53,6 +54,7 @@ class UnityEnvironment(object):
         # and the communicator will directly try to connect to an existing unity environment.
         if file_name is not None:
             self.executable_launcher(file_name, docker_training, no_graphics)
+            #pass
         else:
             logger.info("Start training by pressing the Play button in the Unity Editor.")
         self._loaded = True
